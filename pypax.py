@@ -374,7 +374,7 @@ def main():
                     tag_data_sheet = read_sheet_row(book[aoi],START_ROW+i,sub_tags)
 
                     # compare PLC row to spreadsheet row, add differences to list if any
-                    row_differences = list(set(tag_data_sheet)-set(tag_data_plc))
+                    row_differences = list(set(tag_data_sheet).difference(set(tag_data_plc)))
                     if row_differences:
                         tag_data_differences += row_differences
 
